@@ -17,51 +17,69 @@ export default function HomePage() {
         <div className="absolute inset-0 opacity-[0.07]"
           style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }}
         />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-          <div className="max-w-3xl">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-800/60 border border-brand-700/50 text-brand-200 text-sm font-medium mb-6 backdrop-blur-sm">
-              <Leaf size={13} className="text-brand-300" />
-              Trusted by UVM students since 2024
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+            {/* Left: text */}
+            <div>
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-800/60 border border-brand-700/50 text-brand-200 text-sm font-medium mb-6 backdrop-blur-sm">
+                <Leaf size={13} className="text-brand-300" />
+                Trusted by UVM students since 2024
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 text-balance">
+                Find your perfect{' '}
+                <span className="text-brand-300">Burlington</span>{' '}
+                apartment
+              </h1>
+
+              <p className="text-lg sm:text-xl text-brand-200 leading-relaxed mb-8">
+                NestVT connects UVM students with verified off-campus housing. We handle the tours, lease review, and all the stress — so you can focus on school.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link href="/listings" className="btn-brand px-6 py-3.5 text-base rounded-xl">
+                  Browse Listings
+                  <ArrowRight size={18} />
+                </Link>
+                <Link href="/packages" className="btn-brand btn-outline px-6 py-3.5 text-base rounded-xl border-white/30 text-white hover:bg-white/10 hover:border-white/50">
+                  See Packages
+                </Link>
+              </div>
+
+              {/* Social proof */}
+              <div className="flex items-center gap-6 mt-10 pt-8 border-t border-brand-800/50">
+                <div>
+                  <div className="text-2xl font-extrabold text-white">200+</div>
+                  <div className="text-sm text-brand-300">Verified listings</div>
+                </div>
+                <div className="w-px h-10 bg-brand-800/60" />
+                <div>
+                  <div className="text-2xl font-extrabold text-white">98%</div>
+                  <div className="text-sm text-brand-300">Student satisfaction</div>
+                </div>
+                <div className="w-px h-10 bg-brand-800/60" />
+                <div>
+                  <div className="text-2xl font-extrabold text-white">$349</div>
+                  <div className="text-sm text-brand-300">Full-service from</div>
+                </div>
+              </div>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 text-balance">
-              Find your perfect{' '}
-              <span className="text-brand-300">Burlington</span>{' '}
-              apartment
-            </h1>
-
-            <p className="text-lg sm:text-xl text-brand-200 leading-relaxed mb-8 max-w-2xl">
-              NestVT connects UVM students with verified off-campus housing. We handle the tours, lease review, and all the stress — so you can focus on school.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="/listings" className="btn-brand px-6 py-3.5 text-base rounded-xl">
-                Browse Listings
-                <ArrowRight size={18} />
-              </Link>
-              <Link href="/packages" className="btn-brand btn-outline px-6 py-3.5 text-base rounded-xl border-white/30 text-white hover:bg-white/10 hover:border-white/50">
-                See Packages
-              </Link>
-            </div>
-
-            {/* Social proof */}
-            <div className="flex items-center gap-6 mt-10 pt-8 border-t border-brand-800/50">
-              <div>
-                <div className="text-2xl font-extrabold text-white">200+</div>
-                <div className="text-sm text-brand-300">Verified listings</div>
-              </div>
-              <div className="w-px h-10 bg-brand-800/60" />
-              <div>
-                <div className="text-2xl font-extrabold text-white">98%</div>
-                <div className="text-sm text-brand-300">Student satisfaction</div>
-              </div>
-              <div className="w-px h-10 bg-brand-800/60" />
-              <div>
-                <div className="text-2xl font-extrabold text-white">$349</div>
-                <div className="text-sm text-brand-300">Full-service from</div>
+            {/* Right: video */}
+            <div className="w-full">
+              <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10" style={{ aspectRatio: '16/9' }}>
+                <iframe
+                  src="https://www.youtube.com/embed/TlSFyjs9XLs"
+                  title="NestVT — Find your perfect Burlington apartment"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
               </div>
             </div>
+
           </div>
         </div>
 
