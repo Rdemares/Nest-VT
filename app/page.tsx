@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Leaf, Star, Shield, Search, Users, ArrowRight, CheckCircle2, MapPin, Building2, Quote } from 'lucide-react'
 import ListingCard from '@/components/ListingCard'
+import InterestForm from '@/components/InterestForm'
 import { getFeaturedProperties, REVIEWS, PACKAGES } from '@/lib/mock-data'
 
 const TESTIMONIALS = REVIEWS.filter((r) => r.verified && r.rating >= 4).slice(0, 3)
@@ -245,6 +246,43 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Interest / Lead Capture ───────────────────────────────────────────── */}
+      <section className="py-16 lg:py-20 bg-bg-base">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Left: copy */}
+            <div>
+              <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-700 bg-brand-50 px-3 py-1.5 rounded-full border border-brand-200 mb-4">
+                Stay in the Loop
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-4 text-balance">
+                Ready to find your next place?
+              </h2>
+              <p className="text-text-secondary text-lg leading-relaxed mb-6">
+                Drop us your details and we&apos;ll reach out with new listings, early access to available units, and tips for securing housing near UVM — before the rush.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  'Get notified when new listings drop',
+                  'Early access before listings go public',
+                  'No spam — we only email when it matters',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5">
+                    <CheckCircle2 size={16} className="text-brand-700 mt-0.5 shrink-0" />
+                    <span className="text-sm text-text-secondary">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Right: form */}
+            <div className="card-surface p-6 sm:p-8">
+              <InterestForm />
+            </div>
           </div>
         </div>
       </section>
